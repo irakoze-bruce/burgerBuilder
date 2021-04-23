@@ -38,6 +38,11 @@ class BurgerBuilder extends Component {
 
   removeIngredientHandle = (type) => {
     let oldIngredient = this.state.ingredients[type];
+
+    if (oldIngredient <= 0) {
+      return;
+    }
+
     let newIngredient = oldIngredient - 1;
     let updateIngredient = { ...this.state.ingredients };
     updateIngredient[type] = newIngredient;
