@@ -14,10 +14,19 @@ class Layout extends Component {
   showSlideHandle = () => {
     this.setState({ showSlide: false });
   };
+
+  SidedrawToggleHandle = () => {
+    let showSlide = this.state.showSlide;
+
+    this.setState({ showSlide: !showSlide });
+    // this.setState((prevState) => {
+    //   return { showSlide: !prevState.showSlide };
+    // });
+  };
   render() {
     return (
       <Aux>
-        <Toolbar />
+        <Toolbar SidedrawToggleclicked={this.SidedrawToggleHandle} />
         <Sidedraw open={this.state.showSlide} closed={this.showSlideHandle} />
         <main className={style.container}>{this.props.children}</main>
       </Aux>
