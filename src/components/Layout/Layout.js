@@ -8,7 +8,7 @@ import Sidedraw from "../Navigation/Sidedraw/Sidedraw";
 
 class Layout extends Component {
   state = {
-    showSlide: true,
+    showSlide: false,
   };
 
   showSlideHandle = () => {
@@ -16,12 +16,9 @@ class Layout extends Component {
   };
 
   SidedrawToggleHandle = () => {
-    let showSlide = this.state.showSlide;
-
-    this.setState({ showSlide: !showSlide });
-    // this.setState((prevState) => {
-    //   return { showSlide: !prevState.showSlide };
-    // });
+    this.setState((prevState) => {
+      return { showSlide: !prevState.showSlide };
+    });
   };
   render() {
     return (

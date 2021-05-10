@@ -7,10 +7,10 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 function NavigationItems(props) {
   return (
     <div className={style.NavigationItems}>
-      <NavigationItem link='/' active>
+      <NavigationItem link='/' exact>
         burgerBuilder
       </NavigationItem>
-      <NavigationItem link='/'>Checkout</NavigationItem>
+      <NavigationItem link='/orders'>Orders</NavigationItem>
     </div>
   );
 }
